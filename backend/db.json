@@ -1,0 +1,45 @@
+{
+  "contacts": [
+    {
+      "name": "Lokesh Bairwa ",
+      "email": "Lokesh@gmail.com",
+      "number": "9358398500",
+      "id": 1
+    },
+    {
+      "name": " Chimpu Jaiswal",
+      "email": "Jaiswal@gmail.com",
+      "number": "963854215",
+      "id": 2
+    },
+    {
+      "name": " Bundu Khan",
+      "email": "Bundu@gmail.com",
+      "number": "8949378512",
+      "id": 3
+    },
+    {
+      "name": " Pasha chandel",
+      "email": "Pasha@gmail.com",
+      "number": "998546320",
+      "id": 4
+    }
+  ],
+  "second": [
+    {
+      "compony": "Axestrack ",
+      "add": "gopal purra gujarki thadi 30206",
+      "salary": "20K"
+    },
+    {
+      "compony": "Deeporion ",
+      "add": "Opposite WTP near by UDM building",
+      "salary": "5K"
+    },
+    {
+      "compony": "Genesis",
+      "add": "Vaishali Nagr Amrpali Circle near by cp shop",
+      "salary": "50K"
+    }
+  ]
+}
