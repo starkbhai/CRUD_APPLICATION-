@@ -12,8 +12,10 @@ const [deleteshow,sDelete]=useState(false)
 
  const deleteBtn= (val)=>{
     // const ide = e.target.val
-    ConApi.delete(`/contacts/${val}`)
-    sDelete(true);
+    ConApi.delete(`/contacts/${val}`).then(
+        sDelete(true)
+    );
+  
    
     // getFun();
  }
@@ -24,7 +26,7 @@ const [deleteshow,sDelete]=useState(false)
         ConApi.get("/contacts").then((response)=>{
 
             // sValue(false);
-            sData(response.data)
+            sData(response.data.reverse())
             // console.log(data);
             setTimeout(() => {
                 sDelete(false)

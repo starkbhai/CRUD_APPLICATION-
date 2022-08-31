@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import ConApi from '../Api/ConApi';
 // import { useTimeout } from 'usehooks-ts'
 
@@ -11,19 +11,21 @@ const Update = () => {
 //    const [upDataBtn,sUpDataBtn]=useState();
 const [showMsg,sShowMsg]=useState(false);
 
+// const [name,sName]=useState();
 
 
   const onChangeFun=(e)=>{
      const name = e.target.id;
-     const value1 = e.target.value;
   
-
+     const value1 = e.target.value;
+   
      const elem = {
       ...upData,
       [name]:value1
      };
 
      sUpData(elem);
+    //  Sname1(elem)
     //  console.log(upData)
 
   }
@@ -33,25 +35,41 @@ const [showMsg,sShowMsg]=useState(false);
             const submitBtn=(e)=>{
             e.preventDefault();
             //    sUpDataBtn(upData);
-            //    console.log(upDataBtn);
+               console.log(upData);
             sShowMsg(true);
             updateData();
             setTimeout(() => {
                 sShowMsg(false);
                 // console.log("One")
             }, 2000);
-            
+             
+           
             }
 
-  
+   
+            const navigate = useNavigate();
  
 
   const updateData =()=>{
    
    ConApi.patch(`contacts/${ed.rdes}`,upData);
-   
+    navigate('/');
   
   }
+
+  // const [name1,Sname1]=useState();
+  // const [email,Semail]=useState();
+  // const [number,Snumber]=useState();
+
+  //  const getdata = ()=>{
+  //   ConApi.get(`contacts/${ed.rdes}`).then((resp)=>{
+  //     Sname1(resp.data.name);
+  //     Semail(resp.data.email);
+  //     Snumber(resp.data.number);
+  //   })
+  //  }
+
+  //  getdata();
    
   return (
    <>
@@ -68,7 +86,7 @@ const [showMsg,sShowMsg]=useState(false);
   <form  >
                     <div className="form-group mb-6">
                     <label htmlFor="exampleInputEmail1" className="form-label inline-block mb-2 text-gray-700">Name</label>
-                    <input type="text" onChange={onChangeFun} className="form-control
+                    <input type="text" onChange={onChangeFun}   className="form-control
                         block
                         w-full
                         px-3
@@ -88,7 +106,7 @@ const [showMsg,sShowMsg]=useState(false);
                     </div>
                     <div className="form-group mb-6">
                     <label htmlFor="exampleInputEmail1" className="form-label inline-block mb-2 text-gray-700">Email address</label>
-                    <input type="email" onChange={onChangeFun} className="form-control
+                    <input type="email" onChange={onChangeFun}  className="form-control
                         block
                         w-full
                         px-3

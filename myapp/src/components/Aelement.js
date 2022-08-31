@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ConApi from '../Api/ConApi';
 
 const Aelement = () => {
@@ -38,10 +38,12 @@ const Aelement = () => {
                
              }
     
-
+            const navigate =useNavigate();
 
             const funDelete=async()=>{
                 await ConApi.post("/contacts",onData)
+                  navigate('/')
+                
             
                  setTimeout(() => {
                     sAddShow(false)
